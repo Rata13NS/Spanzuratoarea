@@ -1,7 +1,9 @@
 let words = ["monitor", "program", "application", "keyboard", "javascript", "gaming", "network"];
 let randomWord;
+let letterInput = document.getElementById('writeLetter');
 let word = document.getElementById('wordLetters');
 let lifes = document.getElementById('gameLifes')
+let wordDisplay = document.getElementById('wordSigns');
 let lifesContor = 7;
 let letterContor;
 let signsContor;
@@ -14,19 +16,20 @@ function chooseRandomWord() {
     word.innerHTML = 'The word has ' + randomWord.length + ' letters' + '<br>';
     for (let i = 0; i < randomWord.length; i++) {
         signs.push('_');
-        word.innerHTML += signs[i] + ' ';
+        wordDisplay.innerHTML += signs[i] + ' ';
     }
-    word.innerHTML += '<br>';
+    wordDisplay.innerHTML += '<br>';
     lifes.innerHTML = 'You have 7 lifes ' + '<br>';
     signsContor = randomWord.length;
 }
 
 function findLetter() {
+    letterInput.value = "";
     letterContor = 0;
     let letterIntroduced = document.getElementById('writeLetter').value;
     for (let i = 0; i < randomWord.length; ++i) {
         if (randomWord[i] === letterIntroduced) {
-            word.innerHTML = word.innerHTML.replace(signs[i], letterIntroduced);
+            wordDisplay.innerHTML = wordDisplay.innerHTML.replace(signs[i], letterIntroduced);
             --signsContor;
             ++letterContor;
         }
