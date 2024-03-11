@@ -38,12 +38,16 @@ function findLetter() {
 
 function statusGame() {
     if (signsContor === 0) {
-        alert('You won! Congratulations!!!')
+        word.innerHTML = '';
+        lifes.innerHTML = '';
+        wordDisplay.innerHTML = 'You won! Congratulations!!!'
     } else if (letterContor === 0) {
         --lifesContor;
         lifes.innerHTML = 'You have ' + lifesContor + ' more lifes';
     }
     if (lifesContor === 0) {
-        alert('You lost! Try again!');
+        word.innerHTML = '';
+        lifes.innerHTML = '';
+        wordDisplay.innerHTML = 'You lost! Try again!';
     }
 }
