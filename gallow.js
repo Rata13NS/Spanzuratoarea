@@ -12,13 +12,12 @@ let signsContor;
 function chooseRandomWord() {
     let randomIndex = Math.floor(Math.random() * words.length);
     randomWord = words[randomIndex];
-    word.innerHTML = 'The word has ' + randomWord.length + ' letters' + '<br/>';
+    word.innerHTML = 'The word has ' + randomWord.length + ' letters';
     for (let i = 0; i < randomWord.length; i++) {
         signs.push('_');
         wordDisplay.innerHTML += signs[i] + ',';
     }
-    wordDisplay.innerHTML += '<br/>';
-    lives.innerHTML = 'You have 7 lives ' + '<br/>';
+    lives.innerHTML = 'You have 7 lives ';
     signsContor = randomWord.length;
 }
 
